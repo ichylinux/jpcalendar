@@ -1,0 +1,14 @@
+---
+applications:
+- name: jpcalendar
+  memory: 2G
+  instances: 1
+  host: jpcalendar
+  domain: cfapps.io
+  path: .
+  services:
+    cleardb-1dc76:
+      label: cleardb
+      provider: cleardb
+      version: n/a
+      plan: spark

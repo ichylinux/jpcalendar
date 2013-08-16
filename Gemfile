@@ -1,11 +1,12 @@
 source 'https://rubygems.org'
 
+ruby '1.9.3'
 gem 'rails', '3.2.14'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3'
+gem 'mysql2'
 
 
 # Gems used only for assets and not required
@@ -23,9 +24,14 @@ end
 gem 'daddy'
 gem 'execjs'
 gem 'holiday_jp'
-gem 'jquery-rails'
+gem 'thin'
+
+group :production do
+  gem 'cloudfoundry-jquery-rails'
+end
 
 group :development, :test do
+  gem 'jquery-rails'
   gem 'thin'
 end
 
