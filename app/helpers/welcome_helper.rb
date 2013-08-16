@@ -9,9 +9,9 @@ module WelcomeHelper
   
   def date_classes(date)
     ret = []
-    ret << 'holiday' if holiday?(date)
     ret << 'sunday' if date.sunday?
     ret << 'saturday' if date.saturday?
+    ret << 'holiday' if holiday?(date)
     ret.join(' ')
   end
   
@@ -20,7 +20,9 @@ module WelcomeHelper
   end
   
   def holiday(date)
-    @holidays_of_month ||= HolidayJp.between(@display_date.beginning_of_month, @display_date.end_of_month)
+    from = @display_date.prev_month.beginning_of_month
+    to = @display_date.next_month.end_of_month
+    @holidays_of_month ||= HolidayJp.between(from, to)
     @holidays_of_month.each do |holiday|
       return holiday.name if holiday.date == date
     end

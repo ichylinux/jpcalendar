@@ -1,5 +1,9 @@
 <table class="calendar">
-  <caption><%= @display_date.year %>年<%= @display_date.month %>月</caption>
+  <caption>
+    <%= link_to '<<', :year => @display_date.prev_month.year, :month => @display_date.prev_month.month %>
+    <span><%= @display_date.year %>年<%= @display_date.month %>月</span>
+    <%= link_to '>>', :year => @display_date.next_month.year, :month => @display_date.next_month.month %>
+  </caption>
   <tr>
     <% 7.times do |i| %>
       <th><%= day_of_week(i) %></th>

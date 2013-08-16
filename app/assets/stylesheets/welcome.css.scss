@@ -1,5 +1,10 @@
 table.calendar {
   border-collapse: collapse;
+  caption {
+    span {
+      margin: 0 20px;
+    }
+  }
   tr {
     td {
       border: solid 1px;
@@ -9,10 +14,6 @@ table.calendar {
         text-align: right;
         border-bottom: solid 1px #000000;
       }
-      div.day.holiday {
-        color: red;
-        background: pink;
-      }
       div.day.sunday {
         color: red;
         background: pink;
@@ -20,6 +21,10 @@ table.calendar {
       div.day.saturday {
         color: blue;
         background: aqua;
+      }
+      div.day.holiday {
+        color: red;
+        background: pink;
       }
       div.content {
         padding: 2px;
