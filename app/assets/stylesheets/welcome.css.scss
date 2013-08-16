@@ -4,13 +4,30 @@ table.calendar {
     td {
       border: solid 1px;
       div.day {
+        font-size: 0.9em;
         padding: 2px;
         text-align: right;
+        border-bottom: solid 1px #000000;
+      }
+      div.day.holiday {
+        color: red;
+        background: pink;
+      }
+      div.day.sunday {
+        color: red;
+        background: pink;
+      }
+      div.day.saturday {
+        color: blue;
+        background: aqua;
       }
       div.content {
         padding: 2px;
         width: 80px;
-        height: 40px;
+        height: 50px;
+      }
+      div.content.holiday {
+        color: red;
       }
     }
   }

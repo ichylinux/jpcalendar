@@ -22,10 +22,11 @@ end
 
 gem 'daddy'
 gem 'execjs'
+gem 'holiday_jp'
 gem 'jquery-rails'
 
 group :development, :test do
-  gem 'thin'  
+  gem 'thin'
 end
 
 # To use ActiveModel has_secure_password

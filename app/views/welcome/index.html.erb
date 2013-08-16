@@ -9,9 +9,14 @@
   <% if @display_date.beginning_of_month.wday != 0 %>
     <tr>
       <% @display_date.beginning_of_month.wday.times do |i| %>
+        <% date = (@display_date - (@display_date.wday - i).days) %>
         <td>
-          <div class="day"><%= (@display_date - (@display_date.wday - i).days).day %></div>
-          <div class="content"></div>
+          <div class="day <%= date_classes(date) %>">
+            <%= date.day %>
+          </div>
+          <div class="content <%= date_classes(date) %>">
+            <%= holiday(date) %>
+          </div>
         </td>
       <% end %>
   <% end %>
@@ -23,8 +28,12 @@
     <% end %>
     
     <td>
-      <div class="day"><%= date.day %></div>
-      <div class="content"></div>
+      <div class="day <%= date_classes(date) %>">
+        <%= date.day %>
+      </div>
+      <div class="content <%= date_classes(date) %>">
+        <%= holiday(date) %>
+      </div>
     </td>
     
     <% if date.wday == 6 %>
@@ -34,9 +43,14 @@
 
   <% if @display_date.end_of_month.wday != 6 %>
       <% (6 - @display_date.end_of_month.wday).times do |i| %>
+        <% date = @display_date.end_of_month + (i + 1).days %>
         <td>
-          <div class="day"><%= i + 1 %></div>
-          <div class="content"></div>
+          <div class="day <%= date_classes(date) %>">
+            <%= i + 1 %>
+          </div>
+          <div class="content <%= date_classes(date) %>">
+            <%= holiday(date) %>
+          </div>
         </td>
       <% end %>
     </tr>
