@@ -1,0 +1,44 @@
+<table class="calendar">
+  <caption><%= @display_date.year %>年<%= @display_date.month %>月</caption>
+  <tr>
+    <% 7.times do |i| %>
+      <th><%= day_of_week(i) %></th>
+    <% end %>
+  </tr>
+  
+  <% if @display_date.beginning_of_month.wday != 0 %>
+    <tr>
+      <% @display_date.beginning_of_month.wday.times do |i| %>
+        <td>
+          <div class="day"><%= (@display_date - (@display_date.wday - i).days).day %></div>
+          <div class="content"></div>
+        </td>
+      <% end %>
+  <% end %>
+  
+  <% @display_date.end_of_month.day.times do |i| %>
+    <% date = @display_date + i.days %>
+    <% if date.wday == 0 %>
+      <tr>
+    <% end %>
+    
+    <td>
+      <div class="day"><%= date.day %></div>
+      <div class="content"></div>
+    </td>
+    
+    <% if date.wday == 6 %>
+      </tr>
+    <% end %>
+  <% end %>
+
+  <% if @display_date.end_of_month.wday != 6 %>
+      <% (6 - @display_date.end_of_month.wday).times do |i| %>
+        <td>
+          <div class="day"><%= i + 1 %></div>
+          <div class="content"></div>
+        </td>
+      <% end %>
+    </tr>
+  <% end %>
+</table>
