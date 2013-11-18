@@ -51,3 +51,9 @@
       $ rake db:migrate
       </b>
       """
+    * サーバを起動し、ブラウザで localhost:3000 にアクセス
+      """
+      <b>
+      $ rails s
+      </b>
+      """

@@ -4,4 +4,4 @@
 # If you change this key, all old signed cookies will become invalid!
 # Make sure the secret is at least 30 characters and all random,
 # no regular words or you'll be exposed to dictionary attacks.
-Jpcalendar::Application.config.secret_token = '1b1b247153f0ce6766adc96fd52af511eeb2446a51eb762e57eac97a46433106a793a6f4ba8ebe75a393ba70d2de563b21a123d14297a560e30b4c6962d316f7'
+Jpcalendar::Application.config.secret_token = '22a8ef72232cd9902cef21703138e438d47bfe0b3d40eab83cdd72d41f1ebe34a686d133bc0192cc85bcfc097645dc92bfaaa6ab37f148a5fada70257942fb7b'

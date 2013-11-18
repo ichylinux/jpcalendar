@@ -16,3 +16,8 @@ end
 
 もし /^DBを作成$/ do |string|
 end
+
+もし /^サーバを起動し、ブラウザで localhost:3000 にアクセス$/ do |string|
+  visit '/'
+  capture :suppress_url => true
+end
